@@ -11,14 +11,26 @@ export default function Projects() {
     {
       name: 'AI-Native SDLC',
       description:
-        'Agentic workflow automating the full software development lifecycle — from requirement classification and issue triaging to code generation and pull request creation using LangChain, LangGraph, and coding agents.',
-      tags: ['Python', 'LangChain', 'LangGraph', 'TypeScript', 'React'],
+        'Agentic workflow automating the full software development lifecycle — from requirement classification and issue triaging to code generation and pull request creation using LangChain, LangGraph, and a headless coding agent sandbox deployed as Kubernetes Jobs.',
+      tags: ['Python', 'LangChain', 'LangGraph', 'Kubernetes', 'Docker'],
     },
     {
       name: 'RENBE Vulnerability Remediation',
       description:
-        'Enterprise-scale automated vulnerability remediation platform with LLM-powered Ansible playbook generation, Conductor workflow orchestration, feedback agents, and vSphere VM lifecycle management.',
+        'Enterprise-scale automated vulnerability remediation platform with LLM-powered Ansible playbook generation, Conductor workflow orchestration, ReAct feedback agents, non-blocking remediation workers, and vSphere VM lifecycle management.',
       tags: ['Python', 'Go', 'Ansible', 'Conductor', 'MongoDB'],
+    },
+    {
+      name: 'AI Research Assistant (ARIA)',
+      description:
+        'Enterprise adaptation of the Aria Zotero plugin for LLM-powered academic research — integrated custom model endpoints hosted on Dell ACE infrastructure with response parsing and error handling.',
+      tags: ['TypeScript', 'Zotero', 'LLM', 'Plugin Development'],
+    },
+    {
+      name: 'LLM Evaluation & Vulnerability Classification',
+      description:
+        'Benchmarking framework evaluating multiple LLMs (Llama 3.x, CodeLlama, Granite Code, DeepSeek, Qwen) for automated Ansible playbook generation across real-world vulnerability scenarios, with an LLM-powered vulnerability classifier.',
+      tags: ['Go', 'Python', 'LLM Evaluation', 'Ansible'],
     },
     {
       name: 'Model Context Protocol (MCP)',

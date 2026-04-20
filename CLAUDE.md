@@ -4,35 +4,46 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website hosted on GitHub Pages. The portfolio aggregates data from multiple sources:
-- Personal GitHub projects and account activity
-- Corporate GitLab projects
-- Jira tickets/stories
+Personal portfolio website for Chaitanya Joglekar, hosted on GitHub Pages. Built with Vite + React (JavaScript). The portfolio aggregates professional data from multiple sources:
+- Personal GitHub projects (via GitHub API)
+- Corporate GitLab projects (via `glab` CLI)
+- Jira tickets/stories (via ai-dotfiles Jira toolkit)
 
-**Current state:** Early-stage — no tech stack has been chosen and no source code exists yet.
+**Live site:** https://chaitu25.github.io/portfolio
 
-## Repository
+## Commands
 
-- Remote: `https://github.com/chaitu25/portfolio.git`
-- Branch: `main`
-- Deployment target: GitHub Pages
+- `npm run dev` — start Vite dev server (http://localhost:5173/portfolio/)
+- `npm run build` — production build to `dist/`
+- `npm run preview` — preview the production build locally
+- `npm run lint` — ESLint
+- `npm run deploy` — build + push to `gh-pages` branch (legacy, prefer GitHub Actions)
 
-## When Starting Implementation
+## Deployment
 
-Since no stack has been chosen, key decisions that will need to be made first:
-1. **Framework** — static HTML/CSS/JS, or a generator like Next.js / Astro / Hugo
-2. **Data aggregation** — how to pull from GitHub API, GitLab API, and Jira API (build-time vs. runtime)
-3. **Deployment** — GitHub Actions workflow to build and push to `gh-pages` branch (or `docs/` folder)
+GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages on every push to `main`. Can also be triggered manually via `workflow_dispatch`.
 
-Once a stack is chosen, update this file with build, dev, lint, and test commands.
+**Important:** `vite.config.js` sets `base: '/portfolio/'` — all asset paths are relative to this subpath. This must match the GitHub Pages URL.
 
-## Instruction Regarding Interacting with External Sources.
-1. Always use 'jira' skill available to interact with Jira.
-2. Always access/interact corporate Gitlab repo using 'glab' skill or directly using glab cli tool.
-3. Always use Github API to interact with personal Github account to look for personal projects.
+## Architecture
 
+Single-page React app with no routing. `App.jsx` composes section components rendered top-to-bottom:
 
-## Additional Instructions
-1. Don't focus on every single technical detail in a git/gitlab project or in Jira story or epics. Always focus on braoder tehnical skills in it which can be highlighted in a professional portfolio.
-2. When looking at Jira stories also look at the epics linked to it to get the bigger picture.
-3. Use professional language while descrbing technical knowledge , skills , learning and other achievements on the portfolio. 
+`Navbar → Hero → About → Experience → Skills → Projects → Education → Contact → Footer`
+
+Each component is self-contained in `src/components/` with its own data (no external data fetching at runtime). All content — experience details, skills, project lists — is hardcoded as JavaScript objects within each component.
+
+**Styling:** `src/index.css` has CSS custom properties (design tokens) and global resets. `src/App.css` has all component styles using BEM-like naming (e.g., `.experience__card`, `.skills__tag`). No CSS modules or preprocessors.
+
+## Interacting with External Sources
+
+1. Always use the `jira` skill to interact with Jira.
+2. Always access corporate GitLab repos using the `glab` skill or `glab` CLI tool. The corporate GitLab instance is `gitlab.dell.com`.
+3. Always use the GitHub API to interact with the personal GitHub account for personal projects.
+
+## Content Guidelines
+
+1. Focus on broader technical skills that can be highlighted in a professional portfolio — don't enumerate every technical detail from a project or Jira story.
+2. When reviewing Jira stories, also examine linked epics to understand the bigger picture.
+3. Use professional language when describing technical knowledge, skills, and achievements.
+4. Summary and About me section should not contain too many low-level technical terms , instead it should be the consise summary of overall expereince.

@@ -19,7 +19,7 @@ export default function Skills() {
         'LangChain / LangGraph',
         'FastAPI',
         'Model Context Protocol (MCP)',
-        'Docker / Docker Compose',
+        'Docker / Kubernetes',
         'Conductor (Workflow Orchestration)',
         'Ansible',
         'OpenWebUI',

@@ -9,10 +9,12 @@ export default function Experience() {
       highlights: [
         'Architected and built a multimodal RAG pipeline using the ColPali framework and NVIDIA llama-nemoretriever-colembed-3b-v1 embedding model, enabling PDF document retrieval through page-level image embeddings with a FastAPI service and GPU-optimised Docker deployment (CUDA 12.8).',
         'Led the AI-Native SDLC proof of concept — designed an end-to-end agentic workflow using LangChain and LangGraph that automates requirement classification, GitHub issue triaging, code generation, pull request creation, and deployment with human-in-the-loop review.',
+        'Built the AI-SDLC Sandbox — a headless coding agent running as Kubernetes Jobs that clones repositories, executes AI coding agents (OpenCode CLI, Gemini CLI), and creates merge requests autonomously, with an OpenAI-compatible FastAPI proxy for custom model endpoint routing.',
+        'Adapted the Aria AI Research Assistant (Zotero plugin) for enterprise use — integrated custom LLM model endpoints hosted on Dell ACE infrastructure, added response parsing fallback logic, and packaged custom builds for internal distribution.',
         'Developed the Ansible Playbook Triage Service for an enterprise vulnerability remediation platform (RENBE), including an LLM-powered ReAct feedback agent that validates generated playbooks via dry-run execution loops.',
         'Built and containerised microservices for the RENBE automation pipeline — remediation service with Conductor workflow orchestration, non-blocking workers, vSphere VM snapshot management, and MongoDB integration.',
+        'Contributed to the LLM evaluation framework for vulnerability remediation — benchmarking models including Llama 3.x, CodeLlama, Granite Code, Codestral, DeepSeek, and Qwen against real-world vulnerability use cases, with a vulnerability classifier categorising security issues using LLMs.',
         'Evaluated Oracle AI platform capabilities including AI Agent frameworks, model finetuning pipelines, guardrails (content moderation, prompt injection, PII protection), and SQL tooling for agentic database interaction.',
-        'Benchmarked Llama 3.2 (1B and 3B) models for edge deployment scenarios, comparing compute, latency, and accuracy against previously tested LLMs to assess suitability for resource-constrained environments.',
         'Implemented the Model Context Protocol (MCP) for seamless LLM tool integration using LangChain, with a JSON-based configuration system for managing multiple MCP server connections.',
       ],
     },
